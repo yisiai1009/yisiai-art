@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Young Promises — Yisi Ai</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+<a href="work.html">Work</a>
+<a href="statement.html">Artist Statement</a>
+</nav>
+
+<div class="project">
+
+<h1>Young Promises</h1>
+
+<p class="subtitle">
+Photography Project · 2026
+</p>
+
+<p class="project-link">
+<a href="https://www.zine.baby/yisi/young-promises" target="_blank">
+www.zine.baby/yisi/young-promises →
+</a>
+</p>
+
+<p>
+<strong>Young Promises</strong> is a photography project about responsibility, memory, and life choices at a young age. The project follows a young couple, Juna (21) and Nathan (22), who are entering marriage while Nathan is serving as a Marine.
+</p>
+
+<p>
+The photographs include moments before the wedding, Nathan during Marine training, and scenes from their wedding day. When placed together, these images reflect how personal decisions can quickly lead to new responsibilities and turning points in life. Moments that seem ordinary now may later become important memories.
+</p>
+
+<p>
+All photographs were taken by me except the image of Nathan during Marine training, which I included because it represents the discipline and commitment shaping his life.
+</p>
+
+<!-- PHOTO GRID -->
+
+<div style="max-width:900px;margin-top:30px">
+
+<img src="images/yp1.jpg" alt="Young Promises photo 1" style="width:50%;margin:20px auto;display:block;">
+<img src="images/yp2.jpg" alt="Young Promises photo 2" style="width:50%;margin:20px auto;display:block;">
+<img src="images/yp3.jpg" alt="Young Promises photo 3" style="width:50%;margin:20px auto;display:block;">
+<img src="images/yp4.jpg" alt="Young Promises photo 4" style="width:50%;margin:20px auto;display:block;">
+<img src="images/yp5.jpg" alt="Young Promises photo 5" style="width:100%;margin:20px auto;display:block;">
+
+</div>
+
+</div>
+
+<div id="lightbox">
+<img id="lightbox-img">
+</div>
+
+<script>
+
+const images = document.querySelectorAll(".project img")
+const lightbox = document.getElementById("lightbox")
+const lightboxImg = document.getElementById("lightbox-img")
+
+images.forEach(img => {
+
+img.addEventListener("click", () => {
+
+lightbox.style.display = "flex"
+lightboxImg.src = img.src
+
+})
+
+})
+
+lightbox.addEventListener("click", () => {
+
+lightbox.style.display = "none"
+
+})
+
+</script>
+
+</body>
+
+</html>

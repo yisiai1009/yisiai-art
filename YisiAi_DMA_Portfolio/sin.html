@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>The Weight of Sin</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* HERO IMAGE */
+
+.hero-image img{
+width:100%;
+margin:60px auto;
+display:block;
+cursor:pointer;
+}
+
+/* DETAIL IMAGES */
+
+.detail-images{
+max-width:900px;
+margin:80px auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.detail-images img{
+width:100%;
+cursor:pointer;
+}
+
+/* LIGHTBOX */
+
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:black;
+justify-content:center;
+align-items:center;
+z-index:999;
+}
+
+#lightbox img{
+max-width:100%;
+max-height:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<nav>
+<a href="work.html">Work</a>
+<a href="statement.html">Artist Statement</a>
+</nav>
+
+<div class="project">
+
+<h1>The Weight of Sin</h1>
+
+<p class="subtitle">Sculpture · Welded Metal</p>
+
+<p>
+The Weight of Sin is a sculpture made from welded wire and metal rods. 
+The figure resembles a small demon with wings, holding a heavy steel rose. 
+The rose represents temptation and desire, while the demon’s painful posture suggests the burden that desire can create. 
+The work draws from the symbolism of the Seven Deadly Sins and reflects on how attraction and struggle can exist at the same time.
+</p>
+
+<div class="project-images">
+
+<div class="hero-image">
+<img src="images/sin1.jpg" class="zoom-img">
+</div>
+
+<div class="detail-images">
+
+<img src="images/sin2.jpg" class="zoom-img">
+<img src="images/sin3.jpg" class="zoom-img">
+<img src="images/sin4.jpg" class="zoom-img">
+
+</div>
+
+</div>
+
+</div>
+
+<div id="lightbox">
+<img id="lightbox-img">
+</div>
+
+<script>
+
+const images = document.querySelectorAll(".zoom-img")
+const lightbox = document.getElementById("lightbox")
+const lightboxImg = document.getElementById("lightbox-img")
+
+images.forEach(img => {
+
+img.addEventListener("click", () => {
+
+lightbox.style.display = "flex"
+lightboxImg.src = img.src
+
+})
+
+})
+
+lightbox.addEventListener("click", () => {
+
+lightbox.style.display = "none"
+
+})
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Spark — Yisi Ai</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="project">
+
+<nav>
+<a href="work.html">Work</a>
+<a href="statement.html">Artist Statement</a>
+</nav>
+
+<h1>Spark</h1>
+
+<p class="subtitle">
+Goal Planning Interface · UI Design
+</p>
+
+<p>
+Spark is a concept app designed to help users turn long-term goals into small daily actions. 
+The interface focuses on simplicity, visual progress, and clear interaction patterns so that planning feels lightweight rather than overwhelming.
+</p>
+
+<div class="project-link">
+<a href="https://www.figma.com/proto/BDRA3uxigokrfPR05Kujlg/Spark?node-id=102-203&p=f&t=tCMCGpGypesp8pyg-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1" target="_blank">
+Open Interactive Project →
+</a>
+</div>
+
+<div class="spark-grid">
+
+<img src="images/spark1.jpg" class="zoom-img" alt="Spark overview">
+
+<img src="images/spark2.jpg" class="zoom-img" alt="Spark task list">
+
+<img src="images/spark4.jpg" class="zoom-img spark-vertical" alt="Spark goal tracking">
+
+</div>
+
+</div>
+
+
+<!-- LIGHTBOX -->
+
+<div id="lightbox">
+<img id="lightbox-img">
+</div>
+
+
+<script>
+
+const images = document.querySelectorAll(".zoom-img")
+const lightbox = document.getElementById("lightbox")
+const lightboxImg = document.getElementById("lightbox-img")
+
+images.forEach(img => {
+
+img.addEventListener("click", () => {
+
+lightbox.style.display = "flex"
+lightboxImg.src = img.src
+
+})
+
+})
+
+lightbox.addEventListener("click", () => {
+
+lightbox.style.display = "none"
+
+})
+
+</script>
+
+</body>
+
+</html>

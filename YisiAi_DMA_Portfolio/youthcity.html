@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Young City</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+<a href="work.html">Work</a>
+<a href="statement.html">Artist Statement</a>
+</nav>
+
+<div class="project">
+
+<h1>Young City</h1>
+
+
+<p>
+Young City is a photography project that follows a girl wearing a Japanese JK school uniform as she moves through different spaces in the city. The photographs observe how she walks, pauses, and spends time within the urban environment.
+</p>
+
+<p>
+By placing this figure within streets, public places, and everyday city scenes, the project focuses on how a young person experiences and shapes her own moments in the city.
+</p>
+
+<p>
+Through these images, the project explores the relationship between youth and urban life. It invites viewers to think about how personal experiences and memories are formed within the spaces of the city.
+</p>
+
+<div class="project-images">
+
+<div class="project-images">
+
+<img src="images/city1.jpg" class="zoom-img">
+<img src="images/city2.jpg" class="zoom-img">
+<img src="images/city3.jpg" class="zoom-img">
+<img src="images/city4.jpg" class="zoom-img">
+<img src="images/city5.JPG" class="zoom-img">
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+
+<div id="lightbox">
+<img id="lightbox-img">
+</div>
+
+<script>
+
+const images = document.querySelectorAll(".zoom-img")
+const lightbox = document.getElementById("lightbox")
+const lightboxImg = document.getElementById("lightbox-img")
+
+images.forEach(img => {
+
+img.addEventListener("click", () => {
+
+lightbox.style.display = "flex"
+lightboxImg.src = img.src
+
+})
+
+})
+
+lightbox.addEventListener("click", () => {
+
+lightbox.style.display = "none"
+
+})
+
+</script>
