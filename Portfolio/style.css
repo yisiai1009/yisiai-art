@@ -1,0 +1,317 @@
+body{
+
+margin:0;
+font-family:'Inter',sans-serif;
+background:white;
+color:black;
+
+}
+
+
+/* HEADER */
+
+.header{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:30px 40px;
+
+z-index:100;
+
+}
+
+
+.logo{
+
+font-size:18px;
+letter-spacing:3px;
+font-weight:500;
+
+}
+
+
+.menu-button{
+
+font-size:14px;
+letter-spacing:2px;
+cursor:pointer;
+
+}
+
+
+
+/* MENU OVERLAY */
+
+.menu-overlay{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100vh;
+
+background:black;
+color:white;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+
+opacity:0;
+pointer-events:none;
+
+transition:0.4s;
+
+}
+
+.menu-overlay.active{
+
+opacity:1;
+pointer-events:auto;
+
+}
+
+
+.menu-close{
+
+position:absolute;
+top:40px;
+right:40px;
+
+font-size:30px;
+cursor:pointer;
+
+}
+
+
+/* NAV */
+
+.overlay-nav{
+
+display:flex;
+flex-direction:column;
+gap:40px;
+
+text-align:center;
+
+}
+
+
+.overlay-nav a{
+
+font-size:50px;
+
+font-family:'Playfair Display',serif;
+
+text-decoration:none;
+color:white;
+
+letter-spacing:2px;
+
+transition:0.3s;
+
+}
+
+
+.overlay-nav a:hover{
+
+opacity:0.6;
+
+}
+
+
+/* SOCIAL */
+
+.overlay-social{
+
+margin-top:60px;
+
+display:flex;
+gap:30px;
+
+font-size:16px;
+
+}
+
+
+.overlay-social a{
+
+color:white;
+text-decoration:none;
+
+opacity:0.7;
+
+}
+
+.overlay-social a:hover{
+
+opacity:1;
+
+}
+
+
+
+/* HERO */
+
+.hero{
+
+position:relative;
+
+}
+
+.hero img{
+
+width:100%;
+height:90vh;
+
+object-fit:cover;
+
+}
+
+
+.hero-text{
+
+position:absolute;
+
+bottom:60px;
+left:60px;
+
+color:white;
+
+}
+
+
+.hero-text h1{
+
+font-family:'Playfair Display',serif;
+
+font-size:48px;
+margin:0;
+
+}
+
+.hero-text p{
+
+margin-top:10px;
+
+font-size:18px;
+
+}
+
+
+
+/* WORK */
+
+.work{
+
+padding:120px 60px;
+
+}
+
+
+.work h2{
+
+font-family:'Playfair Display',serif;
+font-size:32px;
+
+margin-bottom:60px;
+
+}
+
+
+.series{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+
+gap:40px;
+
+}
+
+
+.series-item{
+
+text-decoration:none;
+color:black;
+
+}
+
+
+.series-item img{
+
+width:100%;
+height:340px;
+
+object-fit:cover;
+
+transition:0.4s;
+
+}
+
+
+.series-item img:hover{
+
+transform:scale(1.04);
+
+}
+
+
+.series-item h3{
+
+margin-top:10px;
+font-size:16px;
+
+}
+
+
+
+/* ABOUT */
+
+.about{
+
+padding:120px 60px;
+
+max-width:700px;
+
+}
+
+
+.about h2{
+
+font-family:'Playfair Display',serif;
+
+}
+
+
+
+/* CONTACT */
+
+.contact{
+
+padding:120px 60px;
+
+}
+
+
+
+/* FOOTER */
+
+footer{
+
+padding:40px 60px;
+
+opacity:0.6;
+font-size:14px;
+
+}
