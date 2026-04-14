@@ -1,190 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Yisi Ai — Portrait Photography</title>
-
 <link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
-
 
 <body>
 
+<!-- Pixel cursor -->
+<div class="cursor" id="cursor"></div>
 
-<header class="header">
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
 
-<div class="logo">
-YISI AI
+<!-- ===================== SPLASH ===================== -->
+<div class="splash" id="splash">
+  <div class="splash-inner">
+
+    <div class="splash-logo">
+      <span class="splash-c" style="--d:0">Y</span>
+      <span class="splash-c" style="--d:1">I</span>
+      <span class="splash-c" style="--d:2">S</span>
+      <span class="splash-c" style="--d:3">I</span>
+      <span class="splash-gap"></span>
+      <span class="splash-c" style="--d:4">A</span>
+      <span class="splash-c" style="--d:5">I</span>
+    </div>
+
+    <p class="splash-sub">PHOTOGRAPHER</p>
+
+    <div class="splash-bar-wrap">
+      <div class="splash-bar">
+        <div class="splash-fill" id="splashFill"></div>
+      </div>
+    </div>
+
+    <p class="splash-prompt">[ PRESS ANY KEY ]</p>
+
+  </div>
 </div>
 
-<div class="menu-button" id="menuBtn">
-MENU
+<!-- ===================== LIGHTBOX ===================== -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-header">
+    <span class="lb-title" id="lbTitle">——</span>
+    <div class="lb-controls">
+      <span class="lb-counter" id="lbCounter">00 / 00</span>
+      <button class="lb-close" id="lbClose">[ X ]</button>
+    </div>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-btn lb-prev" id="lbPrev">[ &lt; ]</button>
+    <div class="lb-frame">
+      <img class="lb-img" id="lbImg" src="" alt="">
+      <span class="lb-file" id="lbFile"></span>
+    </div>
+    <button class="lb-btn lb-next" id="lbNext">[ &gt; ]</button>
+  </div>
 </div>
 
+<!-- ===================== HEADER ===================== -->
+<header class="header" id="header">
+  <div class="logo">YISI AI</div>
+  <div class="menu-button" id="menuBtn">MENU</div>
 </header>
 
-
-
+<!-- ===================== MENU ===================== -->
 <div class="menu-overlay" id="menuOverlay">
-
-<div class="menu-close" id="menuClose">×</div>
-
-<nav class="overlay-nav">
-
-<a href="#work">Work</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-
-</nav>
-
-
-<div class="overlay-social">
-
-<a href="https://www.instagram.com/ai.ssss030/" target="_blank">
-Instagram
-</a>
-
-<a href="https://www.tiktok.com/@ai.ssss030" target="_blank">
-TikTok
-</a>
-
-<a href="https://xhslink.com/m/508RjtgdSrI" target="_blank">
-Xiaohongshu
-</a>
-
+  <div class="menu-close" id="menuClose">[ X ]</div>
+  <nav class="overlay-nav">
+    <a href="#work">WORK</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+  <div class="overlay-social">
+    <a href="https://www.instagram.com/ai.ssss030/" target="_blank">IG</a>
+    <a href="https://www.tiktok.com/@ai.ssss030" target="_blank">TT</a>
+    <a href="https://xhslink.com/m/508RjtgdSrI" target="_blank">XHS</a>
+  </div>
 </div>
 
-</div>
-
-
-
+<!-- ===================== HERO ===================== -->
 <section class="hero">
 
-<img src="images/hero.jpg">
+  <div class="hero-panel">
+    <div class="hero-top">
+      <span class="hero-cat">PORTRAIT PHOTO</span>
+      <span class="hero-num">001</span>
+    </div>
+    <div class="hero-main">
+      <h1>CAPTURING<br>MOMENTS</h1>
+    </div>
+    <div class="hero-bottom">
+      <span class="hero-name">YISI AI</span>
+      <span class="hero-yr">2024</span>
+    </div>
+  </div>
 
-<div class="hero-text">
-
-<h1>Capturing Moments</h1>
-<p>Portrait Photography</p>
-
-</div>
+  <div class="hero-visual">
+    <img src="images/japan-town/011.jpg" alt="" id="heroImg">
+    <span class="hero-visual-label">JAPAN TOWN — SAN FRANCISCO</span>
+  </div>
 
 </section>
 
-
-
+<!-- ===================== WORK ===================== -->
 <section id="work" class="work">
 
-<h2>Selected Work</h2>
+  <div class="work-header reveal">
+    <span class="section-label">SELECTED WORK</span>
+    <span class="series-count">08 SERIES</span>
+  </div>
 
+  <div class="series">
 
-<div class="series">
+    <div class="series-item reveal" data-series="young-promises" role="button" tabindex="0">
+      <div class="series-rule">
+        <span class="series-idx">01</span>
+        <span class="series-loc">CALIFORNIA</span>
+      </div>
+      <div class="series-body">
+        <div class="series-text">
+          <h3 class="series-title">YOUNG<br>PROMISES</h3>
+          <p class="series-sub">YOUTH &amp; FRIENDSHIP</p>
+        </div>
+        <div class="series-image">
+          <img src="images/young-promises/01.jpg" alt="Young Promises" loading="lazy">
+          <div class="series-hover"><span>[ VIEW ]</span></div>
+        </div>
+      </div>
+    </div>
 
+    <div class="series-item reveal" data-series="coyote-hills" role="button" tabindex="0">
+      <div class="series-rule">
+        <span class="series-idx">02</span>
+        <span class="series-loc">EAST BAY</span>
+      </div>
+      <div class="series-body">
+        <div class="series-text">
+          <h3 class="series-title">COYOTE<br>HILLS</h3>
+          <p class="series-sub">HILLS &amp; SOLITUDE</p>
+        </div>
+        <div class="series-image">
+          <img src="images/coyote-hills/01.jpg" alt="Coyote Hills" loading="lazy">
+          <div class="series-hover"><span>[ VIEW ]</span></div>
+        </div>
+      </div>
+    </div>
 
-<a class="series-item">
-<img src="images/young-promises/01.jpg">
-<h3>Young Promises</h3>
-</a>
+    <div class="series-item reveal" data-series="filoli" role="button" tabindex="0">
+      <div class="series-rule">
+        <span class="series-idx">03</span>
+        <span class="series-loc">WOODSIDE</span>
+      </div>
+      <div class="series-body">
+        <div class="series-text">
+          <h3 class="series-title">FILOLI</h3>
+          <p class="series-sub">GARDENS IN SILENCE</p>
+        </div>
+        <div class="series-image">
+          <img src="images/filoli/01.jpg" alt="Filoli" loading="lazy">
+          <div class="series-hover"><span>[ VIEW ]</span></div>
+        </div>
+      </div>
+    </div>
 
+    <div class="series-item reveal" data-series="japan-town" role="button" tabindex="0">
+      <div class="series-rule">
+        <span class="series-idx">04</span>
+        <span class="series-loc">SAN FRANCISCO</span>
+      </div>
+      <div class="series-body">
+        <div class="series-text">
+          <h3 class="series-title">JAPAN<br>TOWN</h3>
+          <p class="series-sub">CULTURE &amp; STREETS</p>
+        </div>
+        <div class="series-image">
+          <img src="images/japan-town/01.JPG" alt="Japan Town" loading="lazy">
+          <div class="series-hover"><span>[ VIEW ]</span></div>
+        </div>
+      </div>
+    </div>
 
-<a class="series-item">
-<img src="images/coyote-hills/01.jpg">
-<h3>Coyote Hills</h3>
-</a>
+    <div class="series-item reveal" data-series="los-altos" role="button" tabindex="0">
+      <div class="series-rule">
+        <span class="series-idx">05</span>
+        <span class="series-loc">SILICON VALLEY</span>
+      </div>
+      <div class="series-body">
+        <div class="series-text">
+          <h3 class="series-title">LOS<br>ALTOS</h3>
+          <p class="series-sub">QUIET AFTERNOONS</p>
+        </div>
+        <div class="series-image">
+          <img src="images/los-altos/01.jpg" alt="Los Altos" loading="lazy">
+          <div class="series-hover"><span>[ VIEW ]</span></div>
+        </div>
+      </div>
+    </div>
 
+    <div class="series-item reveal" data-series="sf" role="button" tabindex="0">
+      <div class="series-rule">
+        <span class="series-idx">06</span>
+        <span class="series-loc">BAY AREA</span>
+      </div>
+      <div class="series-body">
+        <div class="series-text">
+          <h3 class="series-title">SAN<br>FRANCISCO</h3>
+          <p class="series-sub">CITY &amp; FOG</p>
+        </div>
+        <div class="series-image">
+          <img src="images/sf/01.jpg" alt="San Francisco" loading="lazy">
+          <div class="series-hover"><span>[ VIEW ]</span></div>
+        </div>
+      </div>
+    </div>
 
-<a class="series-item">
-<img src="images/filoli/01.jpg">
-<h3>Filoli</h3>
-</a>
+    <div class="series-item reveal" data-series="landend" role="button" tabindex="0">
+      <div class="series-rule">
+        <span class="series-idx">07</span>
+        <span class="series-loc">SAN FRANCISCO</span>
+      </div>
+      <div class="series-body">
+        <div class="series-text">
+          <h3 class="series-title">LAND'S<br>END</h3>
+          <p class="series-sub">COASTAL SOLITUDE</p>
+        </div>
+        <div class="series-image">
+          <img src="images/landend/01.jpg" alt="Land's End" loading="lazy">
+          <div class="series-hover"><span>[ VIEW ]</span></div>
+        </div>
+      </div>
+    </div>
 
+    <div class="series-item reveal" data-series="sjsu-parking" role="button" tabindex="0">
+      <div class="series-rule">
+        <span class="series-idx">08</span>
+        <span class="series-loc">SAN JOSE</span>
+      </div>
+      <div class="series-body">
+        <div class="series-text">
+          <h3 class="series-title">SJSU<br>PARKING</h3>
+          <p class="series-sub">FOUND MOMENTS</p>
+        </div>
+        <div class="series-image">
+          <img src="images/sjsu-parking/01.jpg" alt="SJSU Parking" loading="lazy">
+          <div class="series-hover"><span>[ VIEW ]</span></div>
+        </div>
+      </div>
+    </div>
 
-<a class="series-item">
-<img src="images/japan-town/01.jpg">
-<h3>Japan Town</h3>
-</a>
-
-
-<a class="series-item">
-<img src="images/los-altos/01.jpg">
-<h3>Los Altos</h3>
-</a>
-
-
-<a class="series-item">
-<img src="images/sf/01.jpg">
-<h3>San Francisco</h3>
-</a>
-
-
-<a class="series-item">
-<img src="images/landend/01.jpg">
-<h3>Land's End</h3>
-</a>
-
-
-<a class="series-item">
-<img src="images/sjsu-parking/01.jpg">
-<h3>SJSU Parking</h3>
-</a>
-
-
-</div>
-
+  </div>
 </section>
 
-
-
+<!-- ===================== ABOUT ===================== -->
 <section id="about" class="about">
-
-<h2>About</h2>
-
-<p>
-
-Yisi Ai is a portrait photographer based in California.
-
-His work focuses on capturing quiet moments in everyday life.
-Through natural light and simple compositions, the photographs
-document people at the edge of memory, youth, and transition.
-
-He is currently studying Digital Media Art at San José State University.
-
-</p>
-
+  <div class="about-inner reveal">
+    <span class="section-label">ABOUT</span>
+    <p class="about-statement">
+      PORTRAIT PHOTOGRAPHER<br>
+      BASED IN CALIFORNIA.<br>
+      DOCUMENTING QUIET<br>
+      MOMENTS AT THE<br>
+      EDGE OF YOUTH.
+    </p>
+    <p class="about-bio">
+      YISI AI'S WORK FOCUSES ON NATURAL LIGHT AND SIMPLE
+      COMPOSITIONS. THROUGH INTIMATE PORTRAYALS, THE
+      PHOTOGRAPHS EXPLORE YOUTH, TRANSITION, AND THE
+      TEXTURES OF ORDINARY LIFE. HE IS CURRENTLY
+      STUDYING DIGITAL MEDIA ART AT SAN JOSE STATE
+      UNIVERSITY.
+    </p>
+    <div class="about-meta">
+      <div class="about-meta-item">
+        <span class="meta-label">LOCATION</span>
+        <span class="meta-val">SAN JOSE, CA</span>
+      </div>
+      <div class="about-meta-item">
+        <span class="meta-label">EDUCATION</span>
+        <span class="meta-val">DMA, SJSU</span>
+      </div>
+      <div class="about-meta-item">
+        <span class="meta-label">SPECIALTY</span>
+        <span class="meta-val">PORTRAIT</span>
+      </div>
+    </div>
+  </div>
 </section>
 
-
-
+<!-- ===================== CONTACT ===================== -->
 <section id="contact" class="contact">
-
-<h2>Contact</h2>
-
-<p>
-
-Instagram / TikTok / Xiaohongshu
-
-</p>
-
+  <div class="contact-inner reveal">
+    <div class="contact-left">
+      <span class="section-label">CONTACT</span>
+      <p class="contact-invite">LET'S<br>CREATE<br>TOGETHER.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:yisiai1009@gmail.com">
+        <span class="link-label">EMAIL</span>
+        <span class="link-value">YISIAI1009@GMAIL.COM</span>
+      </a>
+      <a href="https://www.instagram.com/ai.ssss030/" target="_blank">
+        <span class="link-label">INSTAGRAM</span>
+        <span class="link-value">@AI.SSSS030</span>
+      </a>
+      <a href="https://www.tiktok.com/@ai.ssss030" target="_blank">
+        <span class="link-label">TIKTOK</span>
+        <span class="link-value">@AI.SSSS030</span>
+      </a>
+      <a href="https://xhslink.com/m/508RjtgdSrI" target="_blank">
+        <span class="link-label">XIAOHONGSHU</span>
+        <span class="link-value">小红书</span>
+      </a>
+    </div>
+  </div>
 </section>
 
-
-
+<!-- ===================== FOOTER ===================== -->
 <footer>
-
-© Yisi Ai
-
+  <span class="footer-l">© 2024 YISI AI</span>
+  <span class="footer-r">PORTRAIT PHOTOGRAPHY</span>
 </footer>
 
-
 <script src="script.js"></script>
-
 </body>
-
 </html>
