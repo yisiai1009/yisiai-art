@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300;400;700&family=Bebas+Neue&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #03030a;
+  --fg: #ddd8cc;
+  --accent: #00ffe0;
+  --accent2: #ff3cac;
+  --dim: rgba(221,216,204,0.15);
+  --mono: 'Azeret Mono', monospace;
+  --display: 'Bebas Neue', sans-serif;
+}
+
+html, body { width:100%; height:100%; background:var(--bg); overflow:hidden; cursor:none; }
+
+#glcanvas {
+  position:fixed; inset:0; width:100%; height:100%;
+  display:block;
+}
+
+#thomasCanvas {
+  position:fixed; inset:0; width:100%; height:100%;
+  display:block;
+  pointer-events:none;
+  mix-blend-mode: screen;
+  z-index: 5;
+}
+
+
+
+
+#fxCanvas {
+  position: fixed; inset: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  z-index: 8;
+  mix-blend-mode: screen;
+}
+
+/* ── CURSOR ── */
+#cursor {
+  position:fixed; pointer-events:none; z-index:9999;
+  width:20px; height:20px;
+  transform:translate(-50%,-50%);
+}
+#cursor::before, #cursor::after {
+  content:''; position:absolute; inset:0;
+  border:1px solid var(--accent);
+  border-radius:50%;
+  transition:transform 0.15s, opacity 0.15s;
+}
+#cursor::after {
+  transform:scale(0.3);
+  background:var(--accent);
+  opacity:0.6;
+}
+body.clicking #cursor::before { transform:scale(1.8); opacity:0.3; }
+body.clicking #cursor::after  { transform:scale(0.6); }
+
+/* ── HEADER ── */
+#header {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:16px 28px 40px;
+  background:linear-gradient(to bottom, rgba(3,3,10,0.97) 40%, transparent);
+  display:flex; align-items:flex-start; justify-content:space-between;
+  pointer-events:none;
+}
+#header h1 {
+  font-family:var(--display);
+  font-size:clamp(2.2rem,5vw,3.8rem);
+  letter-spacing:0.12em;
+  color:var(--accent);
+  line-height:1;
+  text-shadow: 0 0 40px rgba(0,255,224,0.4);
+}
+#header .sub {
+  font-family:var(--mono);
+  font-size:0.58rem;
+  letter-spacing:0.22em;
+  color:var(--dim);
+  margin-top:5px;
+  text-transform:uppercase;
+}
+#userinfo {
+  text-align:right;
+  font-family:var(--mono);
+  font-size:0.6rem;
+  letter-spacing:0.12em;
+  color:var(--dim);
+  line-height:1.9;
+}
+#userinfo .big { font-size:1.6rem; font-family:var(--display); color:var(--accent); line-height:1; }
+
+/* ── CONCEPT TEXT ── */
+#concept {
+  position:fixed; left:28px; top:50%;
+  transform:translateY(-50%);
+  max-width:170px;
+  font-family:var(--mono);
+  font-size:0.53rem;
+  line-height:1.85;
+  letter-spacing:0.07em;
+  color:rgba(221,216,204,0.18);
+  pointer-events:none; z-index:100;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  transform:translateY(-50%) rotate(180deg);
+}
+
+/* ── BOTTOM PANEL ── */
+#panel {
+  position:fixed; bottom:0; left:0; right:0; z-index:100;
+  padding:0 28px 22px;
+  background:linear-gradient(to top, rgba(3,3,10,0.97) 55%, transparent);
+}
+
+/* Piano keyboard — scrollable, 3 octaves */
+#keyboard-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 14px;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,255,224,0.2) transparent;
+}
+#keyboard-scroll::-webkit-scrollbar { height: 3px; }
+#keyboard-scroll::-webkit-scrollbar-thumb { background: rgba(0,255,224,0.25); border-radius: 2px; }
+#keyboard-wrap {
+  display: flex;
+  align-items: flex-end;
+  position: relative;
+  height: 110px;
+  padding: 0 16px;
+  width: max-content;
+  min-width: 100%;
+  justify-content: center;
+  gap: 0;
+  touch-action: pan-x;
+}
+.key {
+  border-radius: 0 0 5px 5px;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  touch-action: none;
+  flex-shrink: 0;
+}
+.key.white {
+  width: 38px; height: 104px;
+  background: rgba(221,216,204,0.07);
+  border: 1px solid rgba(221,216,204,0.14);
+  border-top: none;
+  margin: 0 1px;
+  transition: background 0.05s;
+}
+.key.black {
+  width: 24px; height: 64px;
+  background: rgba(8,8,18,0.96);
+  border: 1px solid rgba(0,255,224,0.18);
+  border-top: none;
+  margin: 0 -12px;
+  z-index: 2;
+  transition: background 0.05s;
+}
+.key.white:hover, .key.white.active {
+  background: rgba(0,255,224,0.22);
+  border-color: var(--accent);
+  box-shadow: 0 0 14px rgba(0,255,224,0.18) inset;
+}
+.key.black:hover, .key.black.active {
+  background: rgba(0,255,224,0.28);
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(0,255,224,0.25) inset;
+}
+.key.remote-active {
+  background: var(--accent2) !important;
+  border-color: var(--accent2) !important;
+  box-shadow: 0 0 16px var(--accent2);
+}
+.key .note-label {
+  position: absolute; bottom: 5px; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--mono); font-size: 0.45rem;
+  letter-spacing: 0.04em;
+  color: var(--dim); pointer-events: none;
+}
+
+/* Controls row */
+#controls-row {
+  display:flex; gap:24px; flex-wrap:wrap; align-items:flex-end;
+  padding-top:10px;
+  border-top:1px solid var(--dim);
+}
+.ctrl {
+  display:flex; flex-direction:column; gap:5px;
+  min-width:90px;
+}
+.ctrl-label {
+  font-family:var(--mono); font-size:0.52rem;
+  letter-spacing:0.2em; color:var(--dim);
+  text-transform:uppercase;
+}
+.ctrl-val {
+  font-family:var(--display); font-size:1.1rem;
+  color:var(--accent); letter-spacing:0.08em;
+}
+input[type=range] {
+  -webkit-appearance:none; width:100%; height:1px;
+  background:rgba(0,255,224,0.2); outline:none; cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance:none; width:9px; height:9px;
+  background:var(--accent); border-radius:50%;
+}
+input[type=range]:hover { background:rgba(0,255,224,0.4); }
+
+/* Audio toggle + status */
+#audio-btn {
+  margin-left:auto;
+  background:none; border:1px solid var(--dim);
+  color:var(--dim); font-family:var(--mono);
+  font-size:0.58rem; letter-spacing:0.15em;
+  padding:6px 16px; cursor:pointer;
+  transition:all 0.2s; align-self:center;
+}
+#audio-btn:hover, #audio-btn.on { color:var(--accent); border-color:var(--accent); box-shadow:0 0 12px rgba(0,255,224,0.2); }
+
+#status {
+  position:fixed; top:50%; left:50%;
+  transform:translate(-50%,-50%);
+  font-family:var(--mono); font-size:0.65rem;
+  letter-spacing:0.2em; color:var(--accent);
+  pointer-events:none; opacity:0;
+  transition:opacity 0.3s; z-index:200;
+  text-shadow:0 0 20px var(--accent);
+}
+#status.show { opacity:1; }
+
+/* Keyboard hint overlay */
+#kb-hint {
+  position: fixed; right: 28px; top: 50%;
+  transform: translateY(-50%);
+  background: rgba(3,3,10,0.82);
+  border: 1px solid rgba(0,255,224,0.15);
+  padding: 14px 18px;
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  color: var(--dim);
+  z-index: 300;
+  transition: opacity 1s;
+  pointer-events: none;
+}
+.kh-row { display:flex; justify-content:space-between; gap:18px; margin-bottom:6px; }
+.kh-key { color: var(--accent); }
+.kh-fade { margin-top:10px; font-size:0.5rem; opacity:0.4; text-align:center; }
+
+/* Remote cursors */
+.rcursor {
+  position:fixed; pointer-events:none; z-index:200;
+  width:10px; height:10px; border-radius:50%;
+  transform:translate(-50%,-50%);
+  transition:left 0.06s linear, top 0.06s linear;
+  mix-blend-mode:screen;
+}
+
+/* Pulse rings */
+.pring {
+  position:fixed; pointer-events:none; z-index:150;
+  border-radius:50%;
+  transform:translate(-50%,-50%) scale(0);
+  mix-blend-mode:screen;
+  animation:pringAnim 1s cubic-bezier(0.15,0.8,0.3,1) forwards;
+}
+@keyframes pringAnim {
+  0%   { transform:translate(-50%,-50%) scale(0); opacity:1; }
+  100% { transform:translate(-50%,-50%) scale(5); opacity:0; }
+}
+
+@media (max-width:680px) {
+  #concept { display:none; }
+  .key.white { width:26px; height:70px; }
+  .key.black { width:16px; height:44px; margin:0 -8px; }
+}
+
+/* ── TEXT COMPOSER ── */
+#composer-wrap {
+  position: fixed;
+  left: 50%; bottom: 44vh;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: min(600px, 90vw);
+}
+#composer-label {
+  font-family: var(--mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.22em;
+  color: var(--dim);
+  text-transform: uppercase;
+}
+#composer-input {
+  width: 100%;
+  background: rgba(3,3,10,0.75);
+  border: 1px solid rgba(0,255,224,0.25);
+  border-radius: 2px;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  padding: 12px 18px;
+  outline: none;
+  caret-color: var(--accent);
+  text-shadow: 0 0 12px rgba(0,255,224,0.5);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+#composer-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(0,255,224,0.15), inset 0 0 10px rgba(0,255,224,0.05);
+}
+#composer-input::placeholder {
+  color: rgba(0,255,224,0.18);
+  letter-spacing: 0.12em;
+}
+#composer-chars {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-height: 48px;
+  overflow: hidden;
+}
+.composer-char {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 3px 7px;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  color: var(--dim);
+  transition: all 0.08s;
+  letter-spacing: 0.05em;
+}
+.composer-char.active {
+  color: #fff;
+  border-color: var(--accent);
+  background: rgba(0,255,224,0.18);
+  text-shadow: 0 0 16px var(--accent), 0 0 32px var(--accent);
+  transform: translateY(-6px) scale(1.35);
+  box-shadow: 0 0 20px rgba(0,255,224,0.4);
+}

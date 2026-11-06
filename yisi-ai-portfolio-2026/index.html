@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yisi Ai — Designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@300;400;700&family=IBM+Plex+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/portfolio.css">
+</head>
+<body>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lb" onclick="closeLB()">
+  <div class="lb-close" onclick="closeLB()">✕ Close</div>
+  <img id="lb-img" src="" alt="" onclick="event.stopPropagation()">
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-mark"><span></span><span></span></div>
+    YISI AI
+  </a>
+  <div class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#about">About</a>
+    <a href="#artist-statement">Artist Statement</a>
+    <a href="#contact">Contact</a>
+    <span class="nav-avail">Open to work</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-year">2026<br>Portfolio</div>
+  <div class="hero-index">
+    <div class="hero-index-num">YA</div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-kicker">Product Designer · Digital Media Artist</div>
+    <h1 class="hero-name">
+      Yisi<br>
+      <span class="stroke">Ai</span>
+    </h1>
+    <div class="hero-bottom">
+      <div class="hero-bio">
+        <p>I design <b>mobile apps and digital products</b> — from the first sketch to a clickable prototype.</p>
+        <p>Based in San José. Clean interfaces, clear thinking.</p>
+        <div class="hero-tags">
+          <span class="htag">UI · UX</span>
+          <span class="htag">Interaction</span>
+          <span class="htag">Visual Systems</span>
+          <span class="htag">San José CA</span>
+        </div>
+      </div>
+      <div class="hero-scroll">
+        <div class="hero-scroll-label">Scroll</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker">
+    <span class="ti">UI Design</span><span class="ti">Figma</span><span class="ti">Interaction</span><span class="ti">Visual Identity</span><span class="ti">Mobile UX</span><span class="ti">Critical Design</span><span class="ti">San José</span><span class="ti">2026</span><span class="ti">UI Design</span><span class="ti">Figma</span><span class="ti">Interaction</span><span class="ti">Visual Identity</span><span class="ti">Mobile UX</span><span class="ti">Critical Design</span><span class="ti">San José</span><span class="ti">2026</span>
+  </div>
+</div>
+
+<!-- WORK -->
+<div id="work">
+
+  <!-- 01 POLITECHAT -->
+  <div class="proj-block">
+    <div class="proj-header">
+      <div class="proj-n">01</div>
+      <div class="proj-hc">
+        <h2 class="proj-name">PoliteChat</h2>
+        <p class="proj-desc">An AI tool that rewrites rude messages into professional ones</p>
+      </div>
+      <div class="proj-hr">
+        <span class="ptag">Interaction Design</span>
+        <span class="ptag">Critical Design</span>
+        <span class="ptag">Live Performance</span>
+      </div>
+    </div>
+
+    <div class="proj-2col">
+      <div class="proj-about">
+        <p class="lbl">The Problem</p>
+        <p>In daily life and work, we constantly need to write emails, reply to colleagues, message clients — all in a polite, professional tone. <b>But writing that way doesn't come naturally to everyone,</b> especially when you're communicating in a second language.</p>
+        <p class="lbl" style="margin-top:20px;">The Concept</p>
+        <p>PoliteChat is an <b>AI chatbot that rewrites your message in a polite, professional tone.</b> You type what you actually mean — even if it's blunt or frustrated — and it instantly gives you a version you can send. Think of it like <b>Grammarly, but for tone.</b> The vision is a browser plugin that works inside Gmail, Slack, or any chat app — softening your language right where you need it.</p>
+        <p class="lbl" style="margin-top:20px;">Why I built this</p>
+        <p>As a Chinese speaker, I've felt this gap firsthand. Chinese communication tends to be more direct — but in English professional settings, that directness often reads as rude. <b>I built PoliteChat because I personally needed it.</b> I trained the model on hand-curated sentence pairs, designed the full web UI in Figma, and built and tested the whole system end to end — entirely on my own.</p>
+      </div>
+      <div class="proj-meta">
+        <div class="pm"><span class="pm-k">Scope</span><span class="pm-v"><b>Solo project</b> — concept, UI, model training, testing</span></div>
+        <div class="pm"><span class="pm-k">Use cases</span><span class="pm-v">Email drafting, workplace chat, customer service</span></div>
+        <div class="pm"><span class="pm-k">Vision</span><span class="pm-v">Browser plugin like Grammarly — works anywhere you type</span></div>
+        <div class="pm"><span class="pm-k">Built with</span><span class="pm-v">Figma (UI) · Custom dataset · Fine-tuned language model</span></div>
+        <div class="pm"><span class="pm-k">Output</span><span class="pm-v">Working web app + live performance piece</span></div>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <p class="gallery-lbl">Screens — hover to zoom</p>
+      <div class="gallery-track">
+        <div class="gimg-wide" onclick="openLB(this)"><img src="assets/images/work-01.png" alt="PoliteChat landing"></div>
+        <div class="gimg-wide" onclick="openLB(this)"><img src="assets/images/work-02.png" alt="PoliteChat rewrite UI"></div>
+        <div class="gimg-wide" onclick="openLB(this)"><img src="assets/images/work-03.png" alt="PoliteChat why section"></div>
+        <div class="gimg-wide gimg-code" onclick="openLB(this)"><img src="assets/images/work-04.png" alt="System prompt code"></div>
+      </div>
+    </div>
+
+    <p class="work-credit" style="padding:10px 16px">Medium: Web interface prototype. Dimensions: variable, on screen. Images: Yisi Ai.</p>
+    <div class="proj-foot">
+      <div style="display:flex;gap:10px;align-items:center;">
+        <a href="https://dahlia-spline-86746532.figma.site/" target="_blank" class="proj-cta proj-cta-primary">View PoliteChat Site <span class="arrow">↗</span></a>
+        <a href="https://colab.research.google.com/drive/1_SyMZ_2SOtNOZb6AX4zqZK39fDWjNl2C?usp=sharing#scrollTo=or6RSDRKSHBh" target="_blank" class="proj-cta proj-cta-secondary">Model Training Code <span class="arrow">↗</span></a>
+      </div>
+      <span class="proj-yr">2026</span>
+    </div>
+  </div>
+
+<article class="proj-block">
+ <div class="proj-header"><div class="proj-n">02</div><div class="proj-hc"><h2 class="proj-name">Chaos in Common</h2><p class="proj-desc">A browser instrument for playing with sound and motion</p></div><div class="proj-hr"><span class="ptag">Interactive web art</span></div></div>
+ <div class="proj-2col"><div class="proj-about"><p>I used the Thomas attractor to turn changes in motion into an audiovisual experience. Play the on-screen keys or adjust the controls to change the sound and particle trails. The project includes a WebSocket server for sharing gestures and settings across browsers. This portfolio demo runs in single-player mode.</p><p class="work-credit">Medium: Interactive website, JavaScript, canvas, and Web Audio. Dimensions: variable, browser-based. Credit: Yisi Ai.</p></div><div class="work-extra"><strong>Play the instrument</strong><span>Open the demo to try the keys and controls.</span><iframe src="./chaos-in-common.html" title="Chaos in Common single-player demo" loading="lazy"></iframe></div></div>
+ <div class="proj-foot"><a class="proj-cta proj-cta-primary" href="./chaos-in-common.html" target="_blank" rel="noopener">Open single-player demo <span class="arrow">↗</span></a><span class="proj-yr">2026</span></div>
+ </article><article class="proj-block">
+ <div class="proj-header"><div class="proj-n">03</div><div class="proj-hc"><h2 class="proj-name">Shadow Market</h2><p class="proj-desc">A fictional marketplace for restricted technology</p></div><div class="proj-hr"><span class="ptag">Design fiction</span></div></div>
+ <div class="proj-2col"><div class="proj-about"><p>Shadow Market imagines an underground marketplace where anonymous users exchange tools, data, and devices. We used the familiar language of an online store to ask how buyers might decide whom to trust when identities are hidden and ordinary rules no longer apply.</p><p class="work-credit">Medium: Interactive website, HTML, CSS, and JavaScript. Dimensions: variable, browser-based. Collaborators: Yisi Ai, Jerrod Reyes, and Ryan Redden. SJSU ART 101, Spring 2026.</p></div><figure class="shadow-preview">
+  <a href="shadow-market.html#screenshots"><img loading="lazy" src="assets/images/shadow-marketplace.png" alt="Shadow Market portal with product listings, seller ratings, and a network of nearby buyers"></a>
+  <figcaption>Marketplace interface · Project team: Yisi Ai, Jerrod Reyes, and Ryan Redden · 2026. <a href="shadow-market.html#screenshots">View all four screenshots →</a></figcaption>
+</figure></div>
+ <div class="proj-foot"><a class="proj-cta proj-cta-primary" href="https://sjsu-cadre-classes.github.io/SJSU_Art_101_S26_01/Assignments/Project_2/YisiAi_JerrodReyes_RyanRedden/nodeMaze.html" target="_blank" rel="noopener">Open interactive project <span class="arrow">↗</span></a><span class="proj-yr">2026</span></div>
+ </article>
+  <!-- 04 SPARK -->
+  <div class="proj-block">
+    <div class="proj-header">
+      <div class="proj-n">04</div>
+      <div class="proj-hc">
+        <h2 class="proj-name">Spark</h2>
+        <p class="proj-desc">A mobile app that turns your big goals into small daily tasks</p>
+      </div>
+      <div class="proj-hr">
+        <span class="ptag">UI Design</span>
+        <span class="ptag">Mobile</span>
+        <span class="ptag">Figma</span>
+      </div>
+    </div>
+
+    <div class="proj-2col">
+      <div class="proj-about">
+        <p class="lbl">The Problem</p>
+        <p>Most people have goals — go to the gym, finish a side project, build a new habit — but struggle to follow through. <b>Existing planning apps are either too complicated or designed for teams,</b> not for individuals navigating the transition from student life to the working world.</p>
+        <p class="lbl" style="margin-top:20px;">The Concept</p>
+        <p>Spark is a <b>mobile app designed for students and recent graduates</b> who want to turn big goals into small, manageable daily actions. Set a goal — say, go to the gym for 30 days — and Spark breaks it into today's task, tracks your streak on a calendar, and shows your progress as a simple ring. <b>No complexity, no overwhelm.</b></p>
+        <p class="lbl" style="margin-top:20px;">Design Decisions</p>
+        <p>I referenced Canvas — the platform almost every student already uses — as a baseline for familiar interaction patterns. Users who've used Canvas already know how to navigate a task list, check things off, and view a calendar. <b>That familiarity made Spark feel instantly approachable.</b> I chose circular progress rings over percentages because rings feel motivating rather than mathematical. Tasks are grouped by "Today" and "Tomorrow" — not by project — because that's how people actually think about their day.</p>
+        <p>This was a <b>fully independent project:</b> I defined the concept, designed every screen, built the interactive prototype, and ran usability testing myself.</p>
+      </div>
+      <div class="proj-meta">
+        <div class="pm"><span class="pm-k">Scope</span><span class="pm-v"><b>Solo project</b> — research, UX, UI, prototyping, testing</span></div>
+        <div class="pm"><span class="pm-k">Target users</span><span class="pm-v">Students and recent graduates (18–26)</span></div>
+        <div class="pm"><span class="pm-k">Key reference</span><span class="pm-v">Canvas — familiar patterns, low learning curve</span></div>
+        <div class="pm"><span class="pm-k">Design choices</span><span class="pm-v">Progress rings, day-scoped tasks, calm visual tone</span></div>
+        <div class="pm"><span class="pm-k">Built with</span><span class="pm-v">Figma — clickable prototype ready to test</span></div>
+      </div>
+    </div>
+
+    <div class="gallery">
+      <p class="gallery-lbl">Screens — hover to zoom</p>
+      <div class="gallery-track">
+        <div class="gimg-phone" onclick="openLB(this)"><img src="assets/images/work-05.jpg" alt="Spark onboarding"></div>
+        <div class="gimg-phone" onclick="openLB(this)"><img src="assets/images/work-06.jpg" alt="Spark list"></div>
+        <div class="gimg-phone" onclick="openLB(this)"><img src="assets/images/work-07.jpg" alt="Spark calendar"></div>
+        <div class="gimg-phone" onclick="openLB(this)"><img src="assets/images/work-08.jpg" alt="Spark goals"></div>
+      </div>
+    </div>
+
+    <p class="work-credit" style="padding:10px 16px">Medium: Mobile interface prototype in Figma. Dimensions: variable, on screen. Images: Yisi Ai.</p>
+    <div class="proj-foot">
+      <a href="https://www.figma.com/proto/BDRA3uxigokrfPR05Kujlg/Spark?node-id=2-1046&p=f&t=3hTzbmigW3JGKICI-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=2%3A968&show-proto-sidebar=1" target="_blank" class="proj-cta proj-cta-primary">View Spark Prototype <span class="arrow">↗</span></a>
+      <span class="proj-yr">2025</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section-pad" style="border-top:1px solid var(--bd);">
+  <p class="sec-label">About</p>
+  <h2 class="sec-title">I design products<br>people actually<br>want to use.</h2>
+  <div class="about-grid">
+    <div class="about-l">
+      <p>Yisi Ai is a bilingual artist and designer based in San José, California, pursuing a BFA in Digital Media Art at San José State University. Yisi makes interactive websites, interface prototypes, and photographs. Their design work includes PoliteChat, a prototype for rewriting messages, and Spark, a mobile planning app concept. In their web art, they use sound, motion, and familiar interfaces to invite participation. Speaking Mandarin and English informs their interest in tone and how people interpret the same message differently. Outside of school, Yisi works as a freelance photographer in the Bay Area, photographing portraits and events for individuals and organizations.</p>
+      <div class="chips-wrap">
+        <p class="chips-label">Craft</p>
+        <div class="chips">
+          <span class="chip">Figma</span><span class="chip">UI Design</span><span class="chip">Prototyping</span><span class="chip">Design Systems</span><span class="chip">User Research</span>
+        </div>
+        <p class="chips-label">Thinking</p>
+        <div class="chips">
+          <span class="chip">Critical Design</span><span class="chip">Cross-cultural UX</span><span class="chip">Photography</span><span class="chip">Visual Identity</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-r">
+      <div class="stat-list">
+        <div class="stat">
+          <div class="stat-n">04</div>
+          <div class="stat-d">Selected projects in product design and digital media art</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">1<sup>×</sup></div>
+          <div class="stat-d">Live performance piece shown to a real audience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">2<sup>+</sup></div>
+          <div class="stat-d">Years designing and building digital products</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="artist-statement" class="section-pad" style="border-top:1px solid var(--bd)">
+<p class="sec-label">Artist Statement</p><div class="artist-copy"><p>I make interfaces that give people something to do before asking them what they think. A person might rewrite a message, press a key to change a field of particles, or browse a store that could never exist. I use familiar forms such as chat windows, keyboards, and product listings because they give people a way into the work without a long explanation.</p><p>Moving between Mandarin and English has made me pay attention to how much an interface can influence a conversation. In PoliteChat, a change in wording can make the same idea feel more respectful or more distant. With Shadow Market, the language of shopping makes a fictional exchange feel routine, even when the objects for sale raise questions about trust. In Chaos in Common, the controls turn a mathematical system into something visitors can play and hear.</p><p>I also work as a photographer. Framing a portrait has taught me to notice what I leave out as much as what I include. I bring that attention to screen design, where the placement of a button or the wording of a label can change what someone does next. I want people to notice those choices through their own actions.</p></div></section>
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <h2 class="contact-big">
+    Let's<br>
+    build<br>
+    <em>something</em><br>
+    <span class="stroke">together.</span>
+  </h2>
+  <div class="contact-row">
+    <div class="contact-col">
+      <p class="contact-col-lbl">Email</p>
+      <a href="mailto:yisiai1009@gmail.com" class="contact-link">yisiai1009@gmail.com</a>
+    </div>
+    <div class="contact-col">
+      <p class="contact-col-lbl">Work</p>
+      <a href="https://dahlia-spline-86746532.figma.site/" target="_blank" class="contact-link">Figma Portfolio ↗</a>
+      <a href="https://www.figma.com/proto/BDRA3uxigokrfPR05Kujlg/Spark?node-id=2-1046" target="_blank" class="contact-link">Spark Prototype ↗</a>
+    </div>
+  </div>
+  <footer>
+    <span class="fc">© 2026 Yisi Ai</span>
+    <span class="fc">Product Designer · Visual Artist</span>
+  </footer>
+</section>
+
+<!-- CUSTOM CURSOR -->
+<div id="cur" style="position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);">
+  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- TikTok-style music note: cyan shadow offset -->
+    <g transform="translate(2.5,2.5)">
+      <path d="M20 2v13.5a5.5 5.5 0 1 1-3-4.9V6.6L10 8.2V19.5a5.5 5.5 0 1 1-3-4.9V5z" fill="#25f4ee"/>
+    </g>
+    <!-- red layer offset -->
+    <g transform="translate(-1,-1)">
+      <path d="M20 2v13.5a5.5 5.5 0 1 1-3-4.9V6.6L10 8.2V19.5a5.5 5.5 0 1 1-3-4.9V5z" fill="#fe2c55"/>
+    </g>
+    <!-- white main note on top -->
+    <g transform="translate(0.5,0.5)">
+      <path d="M20 2v13.5a5.5 5.5 0 1 1-3-4.9V6.6L10 8.2V19.5a5.5 5.5 0 1 1-3-4.9V5z" fill="white"/>
+    </g>
+  </svg>
+</div>
+
+<!-- CURSOR TRAIL -->
+<canvas id="trail" style="position:fixed;inset:0;pointer-events:none;z-index:9998;"></canvas>
+
+<script src="assets/js/portfolio-1.js"></script>
+
+<script src="assets/js/portfolio-2.js"></script>
+</body>
+</html>

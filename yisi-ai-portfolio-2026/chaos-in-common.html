@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chaos in Common — Single-player Demo</title>
+<link rel="stylesheet" href="assets/css/chaos.css">
+</head>
+<body>
+
+<canvas id="glcanvas"></canvas>
+<canvas id="thomasCanvas"></canvas>
+<canvas id="fxCanvas"></canvas>
+<div id="cursor"></div>
+
+<div id="header">
+  <div>
+    <h1>Chaos in Common</h1>
+    <div class="sub">Thomas Attractor · Single-player Demo</div>
+  </div>
+  <div id="userinfo">
+    OBSERVERS<br>
+    <span class="big" id="ucnum">1</span>
+  </div>
+</div>
+
+<div id="concept">
+  Play the keys or move the controls to change sound and motion. This demo runs locally in your browser.
+</div>
+
+<div id="status"></div>
+<div id="kb-hint">
+  <div class="kh-row"><span class="kh-key">Q–U</span> C5 octave</div>
+  <div class="kh-row"><span class="kh-key">A–J</span> C4 octave</div>
+  <div class="kh-row"><span class="kh-key">Z–M</span> C3 octave</div>
+  <div class="kh-row"><span class="kh-key">1–0</span> black keys</div>
+  <div class="kh-row"><span class="kh-key">SPACE</span> chaos burst</div>
+  <div class="kh-row"><span class="kh-key">↑↓←→</span> speed / hue</div>
+  <div class="kh-fade">press any key to dismiss</div>
+</div>
+
+
+<div id="composer-wrap">
+  <div id="composer-label">Type to compose — every character plays a note</div>
+  <input id="composer-input" type="text" placeholder="start typing..." autocomplete="off" spellcheck="false"/>
+  <div id="composer-chars"></div>
+</div>
+
+<div id="panel">
+  <div id="keyboard-scroll">
+    <div id="keyboard-wrap"></div>
+  </div>
+
+  <div id="controls-row">
+    <div class="ctrl">
+      <div class="ctrl-label">Damping b</div>
+      <div class="ctrl-val" id="v-b">0.208</div>
+      <input type="range" id="sl-b" min="0.1" max="0.35" step="0.001" value="0.208"/>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-label">Speed</div>
+      <div class="ctrl-val" id="v-speed">1.00</div>
+      <input type="range" id="sl-speed" min="0.1" max="3.0" step="0.01" value="1.0"/>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-label">Hue</div>
+      <div class="ctrl-val" id="v-colorShift">0</div>
+      <input type="range" id="sl-colorShift" min="0" max="360" step="1" value="0"/>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-label">Glow</div>
+      <div class="ctrl-val" id="v-glowIntensity">1.20</div>
+      <input type="range" id="sl-glowIntensity" min="0.1" max="3.0" step="0.05" value="1.2"/>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-label">Noise</div>
+      <div class="ctrl-val" id="v-noiseAmt">0.18</div>
+      <input type="range" id="sl-noiseAmt" min="0.0" max="0.6" step="0.01" value="0.18"/>
+    </div>
+    <div class="ctrl">
+      <div class="ctrl-label">Audio</div>
+      <div class="ctrl-val" id="v-audioGain">0.50</div>
+      <input type="range" id="sl-audioGain" min="0" max="1" step="0.01" value="0.5"/>
+    </div>
+    <button id="audio-btn">[ AUDIO OFF — click keys to start ]</button>
+  </div>
+</div>
+
+<script src="assets/js/chaos-1.js"></script>
+</body>
+</html>
